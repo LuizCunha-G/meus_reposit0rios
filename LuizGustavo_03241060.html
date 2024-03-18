@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmópolis</title>
+</head>
+<body>
+    <h1>Viagem</h1>
+
+    Distancia Percorrida
+    <input type="text" name="" id="disperc">
+    <br><br>
+    Tempo de Duração
+    <input type="text" name="" id="tempdur">
+    <br><br>
+    Quantidade de Passageiros
+    <input type="text" name="" id="quantpess">
+    <br><br>
+    Hora de inicio
+    <input type="text" name="" id="horaini">
+    <br><br><br>
+    <button onclick="exec()">Realizar Viagem</button>
+
+    <div id="percurso"></div>
+    <br><br>
+    <div id="passageiros"></div>
+</body>
+</html>
+
+<script>
+
+
+
+    function exec(){
+
+    var distancia = Number(disperc.value);
+    var tempo = Number(tempdur.value);
+    var pass = Number(quantpess.value);
+    var hr = Number(horaini.value);
+    var valKm = 0.77;
+    var temPrun = 1.8;
+    var custoPerc = valKm * distancia;
+    var estimaTempo = (distancia *  temPrun)
+    var sominhaTempo = estimaTempo * 0.1 ;
+    var estimaTempo10 = estimaTempo + sominhaTempo;
+    var estimaMenosTempo = (estimaTempo - sominhaTempo);
+
+    if (tempo >= estimaTempo10 ){
+        var acres = custoPerc * 0.7;
+        var valacres = custoPerc + acres;
+
+        percurso.innerHTML = `Valor do percuso será ${valacres}`;
+        
+    }
+     if( tempo < estimaMenosTempo){
+        var desc = custoPerc * 0.8;
+        var valdesc = desc - custoPerc;
+
+        percurso.innerHTML = `Valor do percuso será ${valdesc}`;
+     }
+
+     if (pass > 1 ){
+        var valor = 3
+        var pessoc = 1
+        var soma  = (custoPerc + 3) + 1
+
+        passageiros.innerHTML = `Valor do percuso será ${soma}`;
+     }
+
+     else{
+        passageiros.innerHTML = `Não excessede`;
+     }
+
+     
+
+
+
+    
+
+}
+</script>
