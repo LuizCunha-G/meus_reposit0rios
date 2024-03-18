@@ -1,0 +1,94 @@
+ORIENTAÇÕES DA PROVA: 
+A prova é individual e COM consulta a qualquer Material de Apoio disponível no Moodle ou código/anotação que você tenha (inclusive caderno). 
+A prova tem duração de 120 minutos (2 horas), então não deixe para o último minuto. Faça quantos uploads forem necessários, pois quando o Moodle fechar não haverá outra alternativa. 
+Se forem usadas tags HTML, técnicas de CSS ou instruções JS que não foram ensinadas nem em algoritmos ou PI, o aluno terá um desconto de 4pts nesta prova. 
+Leia o enunciado com atenção. 
+Resolva somente em 1 (um) arquivo .html. Não crie outros arquivos. O moodle só aceitará 1 (um) arquivo e do tipo html. 
+Ao final do enunciado, há uma parte de "DICAS E OBSERVAÇÕES", junto a um "TESTE DE MESA", que é uma tabela que pode ser usada para testar seu programa, com as entradas e o resultado esperado para aquele cenário de teste. 
+ 
+
+ 
+
+QUESTÃO ÚNICA: 
+Você está ajudando Florinda e Chico, irmãos que compartilham uma casa, a criar um programa para calcular o total das despesas fixas mensais da sua residência. 
+
+O programa deve levar em consideração o consumo de energia elétrica, água, gás e a assinatura do plano de internet com ou sem linha telefônica vinculada. 
+
+Portanto, crie um programa em HTML e JS o qual: 
+
+a) Para calcular o total das contas mensais, o programa deve coletar as seguintes informações do usuário: 
+
+Quantidade de energia consumida em kWh (apenas números). 
+Bandeira tarifária da energia (será informado "vermelha", "amarela" ou "verde"). 
+Volume de água consumido em litros (apenas números). 
+Quantidade de vazamentos de água na casa (apenas números). 
+Volume de gás consumido em litros (apenas números). 
+Quantidade de MB (megabyte) do plano de internet (apenas números). 
+Indicação se possui uma linha telefônica vinculada ao plano de internet (será informado "sim" ou "não"). 
+b) Ao clicar em “Calcular Despesas Fixas”, realize os cálculos de acordo com as regras a seguir para energia, água, gás e internet/telefone: 
+
+Energia Elétrica:  
+O valor base varia de acordo com a bandeira tarifária selecionada:  
+Se for Bandeira "verde": R$0,75 por kWh. 
+Se for Bandeira "amarela": R$0,90 por kWh. 
+Se for Bandeira "vermelha": R$1,00 por kWh. 
+Se a quantidade de kWh consumida informada for menor ou igual a 50, aplique um desconto de 10% no valor base da conta de energia. 
+Água:  
+O valor base é R$3,50 por litro de água consumido. 
+Para cada vazamento de água detectado, acrescente R$ 10,00 ao valor base da conta de água, devido ao desperdício contínuo. 
+Gás:  
+O valor base é R$2,50 por litro de gás consumido. 
+Internet/Telefone:  
+O valor base do plano é R$0,80 por cada MB (megabyte) de internet informado pelo usuário. 
+Se houver uma linha telefônica vinculada ("sim"), acrescente 25% ao valor base da conta de internet. 
+Se não houver linha telefônica vinculada, desconte 7.5% do valor base da conta de internet. 
+c) Ao final dos cálculos exiba um extrato, abaixo do botão, dessa forma: 
+
+        Com o consumo de AA kWh na bandeira BB, a conta de energia totaliza R$ CC. 
+        Com o consumo de DD litros de água contendo EE vazamentos, a conta de água totaliza R$ FF. 
+        Com o consumo de GG litros de gás, a conta de gás totaliza R$ HH. 
+        Com o consumo de II MB de internet, o valor do plano de internet/telefone totaliza R$ JJ. 
+        Gasto total de despesas mensal: R$ KK. 
+
+Sendo que: 
+
+“AA” é a quantidade de kWh informada; 
+“BB” é a bandeira tarifária ("vermelha", "amarela" ou "verde"); 
+“CC” é o valor calculado para a conta de energia (valor base que varia com a bandeira - desconto de acordo com quantidade de kWh consumida); 
+“DD” é o volume de água consumido em litros; 
+“EE” é a quantidade de vazamentos de água na casa; 
+“FF” é o valor calculado para a conta de água (valor base + acréscimo de vazamentos); 
+“GG” é o volume de gás consumido em litros; 
+“HH” é o valor calculado para a conta de gás; 
+“II” é o valor base do plano de internet; 
+“JJ” o valor calculado para a conta de internet e telefone (plano base + acréscimo caso tenha telefone - desconto caso não tenha); 
+“KK” é o valor total, somando o valor de todas as contas exibidas (conta de energia + conta de água + conta de gás + conta de internet); 
+ 
+
+ 
+
+OBSERVAÇÕES: 
+NÃO é necessário utilizar validações nas entradas, apenas assuma que a entrada é válida, assim como na tabela disponibilizada para testes. 
+NÃO é necessário estilizar a mensagem final, desde que contenha todos os valores a serem exibidos corretamente. 
+“kWh” significa “kilowatt-hora”, que representa o consumo energia por tempo, sendo que um kilowatt representa 1000 watts. 
+"MB" significa "megabyte", que é uma unidade de medida de informação que equivale a 1 000 000 bytes (segundo SI) ou a 220 = 1 048 576 bytes, dependendo do contexto.
+Lembre-se que no javascript, números decimais são tratados com ponto, não com vírgula, como: 
+R$ 0,75 ⇒ 0.75 
+R$ 0,90 ⇒ 0.9 
+R$ 3,50 ⇒ 3.5 
+R$ 2,50 ⇒ 2.5 
+Para acrescentar ou descontar um valor em percentual (%), pode-se utilizar alguma das fórmulas:  
+valorInicial + valorInicial * 11 / 100 ⇒ acréscimo de 11 porcento; 
+valorInicial - valorInicial * 22 / 100 ⇒ decréscimo de 22 porcento; 
+valorInicial * (100 + 33) / 100 ⇒ acréscimo de 33 porcento; 
+valorInicial * (100 - 44) / 100 ⇒ decréscimo de 44 porcento; 
+valorInicial * (1 + 0.9)  ⇒ acréscimo de 90 porcento; 
+valorInicial * (1 - 0.04)  ⇒ decréscimo de 4 porcento; 
+ 
+
+TABELA PARA TESTES (TESTE DE MESA): 
+Para facilitar seus testes, utilize a tabela abaixo para verificar o funcionamento do seu programa. 
+As colunas “energia consumida (kwh)”, “bandeira”, “água consumida (litros)”, “vazamentos”, “gás consumido (litros), “MB internet” e “telefone” simulam as entradas do usuário. 
+As colunas “conta energia”, “conta água”, “conta gás” e “conta internet” são as contas calculadas com base nas entradas informadas. 
+A coluna “total de despesas” representa a soma de todas as contas calculadas. 
+A tabela serve para que você teste seu programa utilizando os cenários de entrada e verificar se os valores dos cálculos da tabela são iguais ou semelhantes aos do seu programa. 

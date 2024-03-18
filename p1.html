@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior idade</title>
+</head>
+<body>
+    <h1>Party</h1>
+
+    <label for="year">Digite sua idade</label>
+    <input type="text" name="" id="idade_maior" placeholder="Digite sua idade">
+    <br><br>
+    <button onclick="idade()">Ir pra festa</button>
+    
+</body>
+</html>
+
+<script>
+     function idade() {
+        var anos = Number(idade_maior.value);
+
+        if(anos < 18){
+            alert(`Pedir Permissão ao Responsável`)
+        }
+
+        if(anos >= 18){
+            alert(`#Partiu Festa`)
+        }
+     }
+</script>

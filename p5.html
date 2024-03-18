@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enel</title>
+</head>
+<body style="background-color: bisque;">
+    <h1>Conta de Luz</h1>
+    
+    <input type="text" name="" id="khw_mes" placeholder=" Digite os Kwh por mês">
+    <br><br>
+    <button onclick="calcular()">Calcular conta de luz</button>
+    <br><br><br>
+    <div id="resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var kwh = Number(khw_mes.value);
+        var valor = 0.85
+        var desc = kwh *  0.10
+        var semdesc = (kwh * valor)
+        var comdesc = (semdesc - desc)
+
+        if (kwh < 100) {
+            alert(`Sua conta está com o valor de R$ ${comdesc}`)
+        }
+
+        else{
+            alert(`Sua conta está com o valor de R$ ${semdesc}`)
+        }
+    }
+</script>

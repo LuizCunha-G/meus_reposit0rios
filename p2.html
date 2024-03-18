@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicio</title>
+</head>
+<body>
+    <h1>Abstinência</h1>
+    <label for="">Quntas latas de refri você toma por dia:</label>
+    <input type="text" name="" id="refrigerante" placeholder="Digite o número de refrigerantes">
+    <br><br>
+    <button onclick="latas()">Quantos refri?</button>
+    <br><br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    var ano = 365
+
+    function latas(){
+        var lataspordia = Number(refrigerante.value);
+        var alerta = (lataspordia * ano)
+
+        if ( alerta > 500){
+
+           resultado.innerHTML = `Número de latas por dia equivalente a ${alerta}, Cuidado com a Diabetes`
+        }
+
+        else {
+            resultado.innerHTML = `Número de latas por dia equivalente a ${alerta}`
+        }
+
+
+    }
+</script>

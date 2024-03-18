@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benficios</title>
+</head>
+<body>
+    <h1>Auxilio</h1>
+
+    <label for="">Digite sua renda:</label>
+    <input type="text" name="" id="renda_fam" placeholder="Digite o valor">
+    <br><br>
+    <label for="">Digite o valor da prestação:</label>
+    <input type="text" name="" id="prest_lia" placeholder="Digite o valor">
+    <br><br>
+    <button onclick="fii()">Verificar o financiamento</button>
+    <br><br><br>
+    <div id="finan_ciamento"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function fii(){
+        var rendaf = Number(renda_fam.value);
+        var pestacao = Number(prest_lia.value);
+        var call = (pestacao /  rendaf) * 100;
+
+        if(call <= 30){
+            finan_ciamento.innerHTML = `A prestação corresponde a ${call}% da renda familiar`
+        }
+
+        else{
+            finan_ciamento.innerHTML = `Será necessário complementar a renda familiar`
+        }
+    }
+
+</script>
