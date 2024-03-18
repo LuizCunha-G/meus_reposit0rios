@@ -1,0 +1,64 @@
+<!-- 
+    Crie um programa o qual: 
+
+    a) Receba um número;
+    b) Valide o número, onde: 
+    b1) Caso seja maior que 50, exiba: 
+        "O número X é maior que 50";
+    b2) Caso seja menor ou igual a 50, exiba: 
+        "O número X é menor ou igual a 50"
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Número: <input id="input_numero" type="text"> <br>
+    <button onclick="analisar()">Analisar Número</button>
+</body>
+</html>
+<script>
+    function analisar() {
+        var numero = Number(input_numero.value);
+
+        if (numero > 50) {
+            alert(`O número ${numero} é maior que 50`);
+        } else {
+            alert(`O número ${numero} é menor ou igual a 50`)
+        }
+        // também poderia inverter, colocando no if "numero <= 50" e no else o cenário do "maior que 50"
+    
+        alert('Estou fora das estruturas de decisão!');
+    
+    }
+    /*
+        "else" significa literalmente "senão" em português, uma palavra que normalmente indica alguma condição.
+        
+        Nós a utilizamos no nosso dia-a-dia em situações que temos duas condições, sendo normalmente associada à segunda condição, como: 
+            - "se eu tiver dinheiro, vou ao shopping, SENÃO vou à praça";
+            - "se estiver frio, vou usar tênis, SENÃO vou usar sandália;
+            - "se minha mãe deixar, vou brincar, SENÃO vou estudar";
+        Como podemos analisar, o "SE" da condição está atrelado a tomada da primeira decisão.
+        E o "SENÃO", está atrelado a outra tomada de decisão, normalmente CONTRÁRIA a condição do "SE".
+
+
+        Composição da estrutura de decisão "if else":
+            if (condicao) { 
+                ...comandos primeiro cenário...   
+            } else {   
+                ...comandos segundo cenário...   
+            }
+
+            - if: palavra-chave que indica a definição de uma estrutura de decisão;
+            - (condicao): validação que será realizada, onde:
+                -- caso a condição seja VERDADEIRA, executará o bloco de comandos "IF", ignorando o bloco "ELSE" 
+                -- caso a condição seja FALSA, ignorará o bloco "IF" e executará somente o bloco de comandos do "ELSE";
+            - {}: as chaves indicam onde nosso bloco de instruções começa e termina, delimitando o seu conteúdo;
+            - else: palavra-chave que indica a continuação de uma estrutura de decisão, representando o cenário contrário do "IF";
+                -- não existe condição para o ELSE, afinal, está implícito que ele é o contrário do IF
+    */
+</script>
