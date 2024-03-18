@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+    <h1>Pizza</h1>  
+    <br>
+    <p>Valor da Pizza</p>
+    <input id="input_valor" type="text" placeholder="Digite o valor da pizza">
+    <br><br>
+    <p>Quantidade de Amigos</p>
+    <input type="text" id="input_amigos" placeholder="Digite a quantidade de amigos">
+    <br><br>
+
+    <button onclick="pizza()">#lovePizza</button>
+</body>
+</html>
+
+<script>
+
+    function pizza(){
+        var val = Number(input_valor.value);
+        var amg = Number(input_amigos.value);
+        var qtdv = val/amg;
+
+        alert("Cada um dos " + amg + " amigos vai pagar " + qtdv )
+    }
+
+</script>

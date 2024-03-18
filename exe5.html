@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTech</title>
+</head>
+<body>
+    <h1>Média Final</h1>
+    
+      
+    <p>Nome do Aluno</p>
+    <input id="input_nome" type="text" placeholder="Digite nome">
+    <br><br>
+    <p>Nota Continuada</p>
+    <input id="input_continuada" type="text" placeholder="Coloque sua nota">
+    <br><br>
+    <p>Nota Semestral</p>
+    <input id="input_semestral" type="text" placeholder="Coloque sua nota">
+    <br><br>
+    <button onclick="calculomédia()">Média</button>
+</body>
+</html>
+
+<script>
+    function calculomédia() {
+        var Cont = Number(input_continuada.value);
+        var Sems = Number(input_semestral.value);
+        var perc1 = 0.40;
+        var perc2 = 0.60;
+        var contperc = Cont * perc1;
+        var semsperc = Sems * perc2;
+        var resul = contperc + semsperc;
+    
+        alert('A média de ' + input_nome.value + ' será de '+ resul )
+    }
+    
+    </script>
