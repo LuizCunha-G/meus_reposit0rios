@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <!-- aqui será calulado o valor dos remedios por:
+         custo (Valor)
+         vendas (quantidade)
+         lucro por venda (valor)  -->
+    <h1>Simulador</h1>
+
+    <label for="">Custo com Remédios: </label>
+    <input type="text" name="" id="med" placeholder="digite o valor">
+    <br><br>
+    <label for="">Vendas de Remédios: </label>
+    <input type="text" name="" id="medvend" placeholder="digite o valor">
+    <br><br>
+    <label>Remédios Danificados</label>
+    <input type="text" name="" id="medruins" placeholder="digite a quantidade">
+    <br><br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br><br>
+
+    <div id="divResultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var custo = Number(med.value);
+        var vendas = Number(medvend.value);
+        var dan = Number(medruins.value);
+        var perda = 0.5;
+        var perdaPorPessoa = vendas * perda;
+        var lucroTotal = (perdaPorPessoa*dan); 
+        var ;
+
+        divResultado.innerHTML = `Sua Perda de clientes é ${lucroTotal}`
+
+    }
+
+</script>

@@ -1,23 +1,24 @@
-// Temperature data
-const temperatureData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    datasets: [{
-        label: 'Temperature',
-        data: [12, 19, 3, 5, 2, 3, 7, 8, 9, 10, 11, 12],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1
-    }]
-};
+function calculateCost() {
+    // Obter os valores inseridos pelo usuário
+    let medicineCost = parseFloat(document.getElementById("medicine").value);
+    let salesRevenue = parseFloat(document.getElementById("medicine-sales").value);
+    let damagedMedicine = parseInt(document.getElementById("damaged-medicine").value);
 
-// Energy data
-const energyData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    datasets: [{
-        label: 'Energy',
-        data: [120, 190, 130, 150, 120, 130, 170, 180, 190, 200, 210, 220],
-        backgroundColor: 'rgba(153, 102, 255, 0.2)', // Add the alpha value here
-        borderColor: 'rgba(153, 102, 255, 1)',
-        borderWidth: 1
-    }]
-};
+    // Calcular o custo dos produtos danificados
+    let lossPercentage = 0.05;
+    let lossPerDamagedMedicine = salesRevenue * lossPercentage;
+    let totalLoss;
+
+    if (damagedMedicine > 0) {
+        totalLoss = damagedMedicine * lossPerDamagedMedicine;
+    } else {
+        totalLoss = 0;
+    }
+
+    // Calcular o custo total
+    let totalCost = medicineCost + totalLoss;
+
+    // Exibir o resultado na página
+    let totalCostElement = document.getElementById("totalCost");
+    totalCost.innerHTML = `Custo total mensal: R$ ${totalCost.toFixed(2)}`;
+}
