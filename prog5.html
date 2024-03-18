@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte Público</title>
+</head>
+<body>
+<h1>Bilhete Único</h1>
+
+    Valor da Tarifa:
+    <input type="text" name="" id="passagemOnibus" placeholder="Digite o valor da passsagem">
+    <br><br>
+    Viagens Por Mês:
+    <input type="text" name="" id="viagemMes" placeholder="Digite suas viagens por mês">
+    <br><br>
+    Distância de Casa Até o Trabalho:
+    <input type="text" name="" id="longeHome" placeholder="Distância em Km">
+    <br><br>
+    <button onclick="transporte()">CalcularVT</button>
+    <br><br><br>
+    <div id="top_bilhete">Será exibido seu gasto com o transporte</div>
+</body>
+</html>
+<script>
+
+    function transporte(){
+        var tarifa = Number(passagemOnibus.value);
+        var idaevolta = Number(viagemMes.value);
+        var km = Number(longeHome.value);
+        var vgmparticular = 0.75
+        var totalviagem = (tarifa * idaevolta)
+        var uber =( vgmparticular * km)
+        var escape = (idaevolta *0.10)
+        var onibus = (idaevolta * 0.90)
+
+        top_bilhete.innerHTML = `Você vai gastar R$ ${totalviagem} por mês com transporte público
+        <br><br>
+        Se você usar Uber irá gastar ${uber}
+        <br><br>
+        Se você faz ${idaevolta} viagens, você irá ir de Ônibus ${onibus} vez e de Uber ${escape} `
+    }
+
+</script>

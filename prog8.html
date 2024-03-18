@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #imagem{
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <img id="imagem" src="https://img.freepik.com/psd-premium/carro-esporte-branco-na-ilustracao-de-renderizacao-3d-de-fundo-transparente_494250-66507.jpg" alt="Imagem">
+
+    <br><br>
+
+    <button onclick="aumenta()">Aumentar Largura</button>
+    <button onclick="diminui()">Reduzir Largura</button>
+    
+</body>
+</html>
+
+<script>
+
+    function aumenta() {
+        var imagem = document.getElementById('imagem');
+        var larguraAtual = imagem.clientWidth;
+        imagem.style.width = (larguraAtual + 10) + 'px';
+    }
+
+    function diminui() {
+        var imagem = document.getElementById('imagem');
+        var larguraAtual = imagem.clientWidth;
+        if (larguraAtual > 10)
+        imagem.style.width = (larguraAtual - 10) + 'px';
+    }
+</script>

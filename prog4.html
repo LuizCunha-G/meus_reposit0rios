@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+</head>
+<body>
+    <h1>Pizza Hut</h1>
+
+    Sabor da Pizza:
+    <input type="text" name="" id="sabor" placeholder="Digite o sabor da Pizza">
+    <br>
+    Valor da Pizza:
+    <input type="text" name="" id="valorPizza" placeholder="Digite o valor da Pizza">
+    <br>
+    Quantas Pessoas vão comer:
+    <input type="text" name="" id="amigos" placeholder="Digite a quantidadde de amigos">
+    <br><br>
+    <button onclick="Val_Por_Amg()">Ver valor por amigo</button>
+    <br><br><br>
+    <div id="piz_valor"> Aqui mostrará o valor pago por cada amigo</div>
+    
+</body>
+</html>
+
+<script>
+
+    function Val_Por_Amg(){
+        var valor = Number(valorPizza.value);
+        var amgs = Number(amigos.value);
+        var caixinha = 0.10
+        var valortotal = valor + caixinha
+        var resultado = valortotal / amgs
+
+        piz_valor.innerHTML = ` Cada amigo vai colaborar com R$ ${resultado} para a pizza de ${sabor.value}`
+    }
+
+</script>

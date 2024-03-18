@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mover o Bart Simpson</title>
+  <style>
+    #container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    #bartsimpson {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <button onclick="moveLeft()">Mover p/ Esquerda</button>
+  <input type="text" id="pixelsInput" placeholder="Quantos pixels">
+  <button onclick="moveRight()">Mover p/ Direita</button>
+  <br>
+  <img id="bartsimpson" src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png" alt="Bart Simpson on Skate" width="200" height="200">
+</div>
+
+<script>
+  function moveLeft() {
+    var pixels = parseInt(document.getElementById("pixelsInput").value);
+    var bart = document.getElementById("bartsimpson");
+    bart.style.marginLeft = (parseInt(bart.style.marginLeft) - pixels) + "px";
+  }
+
+  function moveRight() {
+    var pixels = parseInt(document.getElementById("pixelsInput").value);
+    var bart = document.getElementById("bartsimpson");
+    bart.style.marginLeft = (parseInt(bart.style.marginLeft) + pixels) + "px";
+  }
+</script>
+
+</body>
+</html>
