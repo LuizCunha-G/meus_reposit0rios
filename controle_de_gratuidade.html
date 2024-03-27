@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Controle de gratuidade </h1>
+    <label for="ipt_idade">Informar a idade do cidadão</label>
+    <br>
+    <input type="text" name="" id="ipt_idade">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+    <button onclick="limpar()">Limpar</button>
+
+    <p id="resultado"></p>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var idade = Number(ipt_idade.value);
+         if (idade <= 10 || idade >= 60){
+        //  if (idade <= 10 && idade >= 60) aqui ele não seria validado poque teeria que utilizar um número entre 10 e 60
+            resultado.innerHTML = (`<b>Oferecer gratuidade ao cidadão</b>`)
+         }
+
+         else {
+           resultado.innerHTML = (`<b>esse cidadão não tem direito a gratuidade</b>`)
+         }
+
+          ; //limpa o campo da input após enviar mensagem
+    }
+
+    function limpar(){
+        resultado.innerHTML = (``);
+
+        ipt_idade.value = ''
+    }
+</script>
