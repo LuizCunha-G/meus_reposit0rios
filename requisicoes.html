@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Cadastro de Endereço</h1>
+
+        <!-- <label for="input_cep">CEP</label>
+        <input type="text" name="" id="input_cep" placeholder="CEP"> -->
+
+
+        <label for="">CEP
+            <input 
+            type="text" 
+            maxlength="8" 
+            oninput="Buscar()" 
+            name="" 
+            id="input_cep" 
+            placeholder="CEP">
+        </label>
+        <br><br>
+        <label for="">Bairro
+            <input type="text" name="" id="input_bairro" placeholder="Bairro">
+        </label>
+        <br><br>
+        <label for="">Complemento
+            <input type="text" name="" id="input_comp" placeholder="Complemento">
+        </label>
+        <br><br>
+        <label for="">Localidade
+            <input type="text" name="" id="input_local" placeholder="Localidade">
+        </label>
+        <br><br>
+        <label for="">UF
+            <input type="text" name="" id="input_uf" placeholder="UF">
+        </label>
+
+        
+    </div>
+    
+    <button onclick="Buscar()">Buscar CEP</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function Buscar(){
+        var cep = input_cep.value;
+        if(cep.length == 8 && !isNaN(Number(cep)))
+        {
+        
+        
+
+        fetch('https://viacep.com.br/ws/'+ cep +'/json/')
+        .then(function(resposta){
+            console.log("resposta");
+            console.log(resposta);
+
+            resposta.json()
+            .then(function(respostaFormatada) {
+                console.log("respostaFormatada:");
+                console.log(respostaFormatada)
+
+            })
+        })
+
+        .catch(function(error){
+            console.log("Houve um erro ao fazer a requisisção: ")
+            console.log(error)
+        })
+
+        console.log('teste')
+    }
+}
+    
+
+</script>
