@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .corver{
+            color: red;
+        }
+
+        .coraz{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>C6 Bank</h1>
+
+    <label for="">Informe seu saldo no banco:</label>
+    <input type="text" name="" id="saldo_inbanco" placeholder=" Digite Seu Saldo">
+    <br><br>
+    <button onclick="but()">Verificar finanças</button>
+    <br><br><br>
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function but(){
+        var saldo = Number(saldo_inbanco.value)
+
+        if( saldo  == 0){   
+            res.innerHTML = `Conta zerada`
+        }
+        if( saldo < 0){
+            res.innerHTML = `<span class="corver">Está devendo!</span>`
+        }
+        else{
+            res.innerHTML = `<span class="coraz">Saldo positivo! :)</span>`
+        }
+    }
+
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculos</h1>
+
+    <p>Primeiro Número</p>
+    <input type="text" name="" id="input_x" placeholder="Digite um número">
+    <br>
+    <p>Segundo Número</p>
+    <input type="text" name="" id="input_y" placeholder="Digite outro número">
+    <br><br>
+    <button onclick="soma()">soma</button>
+    <button onclick="dif()">diferença</button>
+    <br><br>
+    <button onclick="prod()">produto</button>
+    <button onclick="raz()">razão</button>
+
+    <script>
+        function soma(){
+            var num1 = Number(input_x.value);
+            var num2 = Number(input_y.value);
+            var som = num1 + num2;
+
+            alert('O valor da soma é: ' + som);
+        }
+
+        function dif(){
+            var numer1 = Number(input_x.value);
+            var numer2 = Number(input_y.value);
+            var difer = numer1 - numer2;
+
+            alert('O valor da diferença é: ' + difer);
+        }
+
+        function prod(){
+            var num1 = Number(input_x.value);
+            var num2 = Number(input_y.value);
+            var prod = num1 * num2;
+
+            alert('O valor do produto é: ' + prod);
+        }
+
+        function raz(){
+            var num1 = Number(input_x.value);
+            var num2 = Number(input_y.value);
+            var raz = num1 / num2;
+
+            alert('O valor da razão é: ' + raz);
+        }
+    </script>
+</body>
+</html>

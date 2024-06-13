@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofre do Tio patinhas</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: cornflowerblue;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Cofrinho</h1>
+    <div id="total_a">Total guardado no cofrinho: <b>R$0</b></div>
+    <div id="depositos">Depósitos efetuados:<b>0</b></div>
+    <div id="retiradas">Retiradas efetuadas:<b>0</b> </div>
+    <br><br>
+    <button onclick="depositar050()">Depositar 0,50</button>
+    <button onclick="depositar2()">Depositar 2,00</button>
+    <button onclick="retirar050()">Retirar 0,50</button>
+    <br><br>
+    <label for="valor">Valor: </label>
+    <input type="text" name="" id="valor_digitado" placeholder=" Digite o valor">
+    <button onclick="valor()">Retirar</button>
+    
+</body>
+</html>
+
+<script>
+
+    var total = 0;
+    var acumula = 0;
+    var acumularet = 0;
+
+    function depositar050() {
+        var valordeposito = 0.50;
+        total = total + valordeposito;
+        acumula = acumula + 1;
+
+        total_a.innerHTML = `Total guardado no cofrinho: R$ <b>${total}<b/>`
+        depositos.innerHTML = `Depositos efetuados: <b>${acumula}</b>`
+
+    } 
+
+    function depositar2() {
+        var valordeposito = 2;
+        total = total + valordeposito ;
+        acumula = acumula + 1 ;
+
+        total_a.innerHTML = `Total guardado no cofrinho: R$ <b>${total}</b>`
+        depositos.innerHTML = `Depositos efetuados: <b>${acumula}</b> `
+    }
+    
+    
+    function retirar050() {
+        var valorretirada = 0.50 ;
+        total = (total - valorretirada) ;
+        acumularet = acumularet + 1 ;
+
+        total_a.innerHTML = `Total guardado no cofrinho: R$ <b>${total}</b>`
+        retiradas.innerHTML = `Retiradas efetuadas: <b>${acumularet}</b>`
+    }
+
+    function valor(){
+        var valorretirada = Number(valor_digitado.value)
+        total = (total - valorretirada)
+        acumularet = acumularet + 1
+
+        total_a.innerHTML = `Total guardado no cofrinho: R$ <b>${total}</b>`
+        retiradas.innerHTML = `Retiradas efetuadas: <b>${acumularet}</b>`
+    }
+
+</script>

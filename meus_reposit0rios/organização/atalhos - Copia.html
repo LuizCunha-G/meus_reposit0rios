@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body al>
+    <h1>Atalhos - Operações Aritimética</h1>
+
+    N1: <input type="text" name="" id="input_n1">
+
+    <button onclick="multiplicar ()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="somar()">Somar</button>
+    <button onclick="subrtrair()">Subtrair</button>
+
+    <div id="div_menssagem"></div>
+    
+</body>
+</html>
+
+<script>
+    var numero_atual = 1;
+
+    function multiplicar(){
+        var n1 = Number(input_n1.value);
+        numero_atual = numero_atual * n1;
+         div_menssagem.innerHTML = numero_atual;
+
+    }
+
+    function  dividir(){
+        var n1 = Number(input_n1.value);
+        numero_atual = numero_atual / n1;
+         div_menssagem.innerHTML = numero_atual;
+    }
+
+    function  somar(){
+        var n1 = Number(input_n1.value);
+        numero_atual = numero_atual + n1;
+         div_menssagem.innerHTML = numero_atual;
+    }
+
+    function  subrtrair(){
+        var n1 = Number(input_n1.value);
+        numero_atual = (numero_atual - n1);
+         div_menssagem.innerHTML = numero_atual;
+    }
+
+</script>

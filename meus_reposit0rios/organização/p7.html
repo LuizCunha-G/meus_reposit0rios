@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XPTO</title>
+
+    <style>
+
+        .cor{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Banco XPTO</h1>
+
+    <label for=""> Seu Saldo:</label>
+    <input type="text" name="" id="valorr" placeholder="Digite seu Saldo">
+    <br>
+    <label for="">Debito</label>
+    <input type="text" name="" id="debitt" placeholder="Valor a ser debitado">
+    <br><br>
+    <button onclick="xp()">Analisar Conta</button>
+    <br><br><br>
+    <div id="yes_e"></div>
+</body>
+</html>
+
+<script>
+    
+    function xp(){
+        var novosaldo = Number(valorr.value);
+        var debito = Number(debitt.value);
+        var somatudo = (novosaldo - debito);
+
+        if(somatudo >= 0){
+            yes_e.innerHTML = `<b>O saldo atual da conta corrente é ${somatudo}</b>`
+        }
+
+        else{
+            yes_e.innerHTML = `<b>O saldo atual da conta corrente é <span class="cor"> ${somatudo}</span></b>`
+        }
+    }
+    
+</script>

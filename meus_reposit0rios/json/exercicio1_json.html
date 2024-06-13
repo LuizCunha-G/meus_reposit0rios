@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe quantas vitórias possui: <br>
+    <input type="text" id="inp_vitoria"><br><br>
+    Informe quantos empates possui: <br>
+    <input type="text" id="inp_empate"><br><br>
+    Informe quantas derrotas possui: <br>
+    <input type="text" id="inp_derrota"><br><br>
+
+    <button onclick="analise()">Analisar campanha</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    function analise(){
+
+    var lista_campanha = {
+        vitoria,
+        empate,
+        derrota
+    }
+
+    var vitoria = Number(inp_vitoria.value)
+    var empate = Number(inp_empate.value)
+    var derrota = Number(inp_derrota.value)
+
+    vitoria *= 3
+
+    msg.innerHTML = `O time terminou o campeonato com ${vitoria + empate} pontos`
+}
+</script>

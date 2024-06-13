@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PayDay</h1>
+    <label for="salario">Qual o seu salário:</label>
+    <input type="text" name="" id="sall_mo" placeholder="Digite seu salário">
+    <br><br>
+    <button onclick="conf()">Confirmar Salário</button>
+    <br><br>
+    <button onclick="pagcem()">Pagar conta de 100</button>
+    <button onclick="pagquin()">Pagar conta de 500</button>
+    <br><br>
+    <button onclick="loteria()">Ganhar 2000 na loteria</button>
+    <br><br>
+    <div id="mostrando">Mostrar</div>
+</body>
+</html>
+
+<script>
+
+    var grana = 0 
+
+    function conf(){
+        var salario = Number(sall_mo.value);
+        grana = grana + salario
+
+        mostrando.innerHTML = `Grana atual: R$ ${grana}`
+    }
+
+    function pagcem() {
+        var menoscem = 100
+        grana = (grana - menoscem)
+
+        mostrando.innerHTML = `Grana atual: R$ ${grana}`
+    }
+
+
+    function pagquin() {
+        var menosquin = 500
+        grana = (grana - menosquin)
+
+        mostrando.innerHTML = `Grana atual: R$ ${grana}`
+    }
+
+    function loteria() {
+        var loteriaa = 2000
+        grana = (grana + loteriaa)
+
+        mostrando.innerHTML = `Grana atual: R$ ${grana}`
+    }
+</script>

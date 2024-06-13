@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Algoritmolandia</h1>
+
+    <!-- Input field for user's name -->
+    <label for="">Nome do consumidor:</label>
+    <input type="text" name="" id="nomecons" placeholder="Digite seu nome">
+    <br><br>
+    
+    <!-- Input field for user's kWh consumption -->
+    <label for="">Média de khw:</label>
+    <input type="text" name="" id="khw" placeholder="Digite o valor gasto com khw">
+    <br><br>
+    
+    <!-- Buttons for calculating and closing the page -->
+    <button onclick="verificar()">Calcular conta de luz</button>
+    <button onclick="fechar()">Fechar o dia</button>
+    <br><br><br>
+    
+    <!-- Div for displaying the result -->
+    <div id="res"></div>
+    
+    <!-- Div for displaying the total number of bills -->
+    <div id="qtdcontas"></div>
+
+</body>
+</html>
+
+<script>
+// Initialize variables
+var kw = 0;
+var acumularet = 0;
+
+// Function to calculate the bill
+function verificar() {
+    // Get user's name
+    var nome = (nomecons.value);
+
+    // Get user's kWh consumption and convert to a number
+    kw = Number(khw.value);
+
+    // Calculate the kWh consumption for the month
+    var kwMes = kw * 30;
+
+    // Calculate the bill
+    var cal = kwMes * 0.85;
+
+    // Check the bill value
+    if (cal < 1000) {
+        // Calculate the 10% discount
+        var desc10 = cal * 0.10;
+
+        // Calculate the final bill value with discount
+        var valdesc = cal - desc10;
+
+        // Display the result
+        res.innerHTML = `${nome}, O valor que você deve pagar é ${desc10} com ${valdesc.toFixed(2)} de desconto <br>`;
+    }
+
+    else if (cal >= 2100) {
+        // Calculate the 10% surcharge
+        var acres = cal * 0.10;
+
+        // Calculate the final bill value with surcharge
+        var valacres = cal * acres;
+
+        // Display the result
+        res.innerHTML += ` ${nome}, o valor que você deve pagar é  ${acres} com ${valacres.toFixed(2)} de acrescimo <br>`;
+    }
+
+    else {
+        // Display the result
+        res.innerHTML += `O valor que você deve para pagar é ${cal} sem acrescimo`
+    }
+
+    // Increment the total number of bills
+    acumularet++;
+
+    // Display the total number of bills
+    qtdcontas.innerHTML = `Total de contas geradas: ${acumularet}`;
+}
+
+// Function to reset the page
+function fechar() {
+    // Reset the input fields
+    nomecons.value = "";
+    khw.value = "";
+
+    // Reset the result and total number of bills
+    res.innerHTML = "";
+    qtdcontas.innerHTML = "";
+
+    // Reset the variables
+    kw = 0;
+    acumularet = 0;}

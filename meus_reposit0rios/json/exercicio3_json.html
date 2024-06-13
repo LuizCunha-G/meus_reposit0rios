@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>POUPANÇA</h1>
+    <div id="ms">
+        Saldo: R$0.00 <br><br>
+
+        Depósitos: 0 <br><br>
+
+        Saques: 0 <br><br>
+    </div>
+
+    <button onclick="depositar()">Depositar 100</button> <br><br>
+    <button onclick="sacar()">Sacar 20</button>
+</body>
+</html>
+<script>    
+    function depositar(){
+
+        var deposito = {
+            saldo: 0,
+            depositos: 0
+        }
+
+        console.log(deposito)
+
+        
+        ms.innerHTML = `
+        Saldo: R$${deposito.saldo += 100} <br><br>
+
+        Depósitos: ${deposito.depositos++} <br><br>
+
+        Saques: 0 <br><br>`
+    }
+
+    function sacar(){
+        
+    }
+</script>

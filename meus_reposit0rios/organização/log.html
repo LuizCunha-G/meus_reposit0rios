@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte</title>
+</head>
+<body>
+<h1>Bilhete Único</h1>
+
+    Valor da Tarifa:
+    <input type="text" name="" id="passagemOnibus" placeholder="Digite o valor da passagem">
+    <br><br>
+    Viagens Por Mês:
+    <input type="text" name="" id="viagemMes" placeholder="Digite suas viagens por mês">
+    <br><br>
+    Distância de Casa Até o Trabalho:
+    <input type="text" name="" id="longeHome" placeholder="Distância em Km">
+    <br><br>
+    <button onclick="calcularGastosTransporte()">Calcular Gastos</button>
+    <br><br><br>
+    <div id="resultadoGastosTransporte">Será exibido seu gasto com o transporte</div>
+
+    <script>
+        function calcularGastosTransporte(){
+            var passagemInput = document.getElementById("passagemOnibus");
+            var viagemInput = document.getElementById("viagemMes");
+            var distanciaInput = document.getElementById("longeHome");
+            var resultadoDiv = document.getElementById("resultadoGastosTransporte");
+
+            var tarifa = parseFloat(passagemInput.value);
+            var viagensPorMes = parseInt(viagemInput.value);
+            var distanciaKm = parseFloat(distanciaInput.value);
+
+            var vgmparticular = 0.75;
+            var totalViagem = tarifa * viagensPorMes;
+            var custoUber = vgmparticular * distanciaKm;
+            var viagensOnibus = 0.9 * viagensPorMes;
+            var viagensUber = 0.1 * viagensPorMes;
+
+            resultadoDiv.innerHTML = `Você vai gastar R$ ${totalViagem.toFixed(2)} por mês com transporte público.
+            <br><br>
+            Se você usar Uber, irá gastar R$ ${custoUber.toFixed(2)}.
+            <br><br>
+            Das ${viagensPorMes} viagens, você irá de Ônibus ${viagensOnibus.toFixed(0)} vezes e de Uber ${viagensUber.toFixed(0)} vezes.`;
+        }
+    </script>
+</body>
+</html>

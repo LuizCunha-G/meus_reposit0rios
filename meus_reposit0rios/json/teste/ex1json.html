@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="vitoria_ipt" placeholder="Vitorias">
+    <br><br>
+    <input type="text" name="" id="empate_ipt" placeholder="Empates">
+    <br><br>
+    <input type="text" name="" id="derrota_ipt" placeholder="Derrotas">
+    <br><br>
+
+    <button onclick="realizar()">Analisar campanha</button>
+
+    <div id="exibir"></div>
+    
+</body>
+</html>
+
+<script>
+
+function realizar(){
+    var vitoria = Number(vitoria_ipt.value)
+    var empate = Number(empate_ipt.value);
+    var derrota = Number(derrota_ipt.value)
+ 
+    var SP = {
+        vitoria: vitoria,
+        empate: empate,
+        derrota: derrota
+    }
+  
+
+    exibir.innerHTML = `O time terminou o campeonato com ${SP.vitoria} vitorias <br>
+    ${SP.empate} empates <br>
+    ${SP.derrota} derrotas <br>  e ${(SP.vitoria * 3) + SP.empate} pontos`
+
+    console.log(SP)
+}
+
+</script>

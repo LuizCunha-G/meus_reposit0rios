@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noite da Pizza</title>
+</head>
+<body>
+    <label for="">Valor da Pizza:</label>
+    <input type="text" name="" id="valor_pizza"  placeholder="Digite o valor da pizza">
+    <br>
+    <label for="">Quantidade de amigos:</label>
+    <input type="text" name="" id="qtd_amgs" placeholder="Digite quantos amigos vão dividir">
+    <br><br>
+    <button onclick="pizza()">Rolar Pizza?</button>
+    <br><br><br>
+    <div id="resultado">vai rolar a pizza?</div>
+
+</body>
+</html>
+
+<script>
+
+    function pizza(){
+        var  preco = Number(valor_pizza.value);
+        var amigo = Number(qtd_amgs.value);
+        var divisao = ( preco / amigo)
+
+        if( divisao <= 20.00){
+            resultado.innerHTML = `Cada amigo vai pagar R$ ${divisao} pela pizza" `
+        }
+        
+        else {
+            resultado.innerHTML = `Deu ruim! Pizza muito cara!`
+        }
+    }
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+
+    <input type="text" name="" id="tabuada" placeholder="Digite um número">
+    <br><br>
+    <button onclick="tabu()">Ver Tabuada</button>
+    <br><br><br>
+    <div id="Tabo_numer"> Aqui será visto o resultado da tabuada</div>
+
+
+    
+</body>
+</html>
+
+<script>
+
+    function tabu(){
+        var estaca0 = Number(tabuada.value);
+        var a = estaca0 * 1;
+        var b = estaca0 * 2;
+        var c = estaca0 * 3;
+        var d = estaca0 * 4;
+        var e = estaca0 * 5;
+        var f = estaca0 * 6;
+        var g = estaca0 * 7;
+        var h = estaca0 * 8;
+        var i = estaca0 * 9;
+
+        Tabo_numer.innerHTML = `a Tabuada solicitada é referente ao número ${estaca0}
+        <br><br>
+        ${estaca0} x 1 = ${a}
+        <br><br>
+        ${estaca0} x 2 = ${b}
+        <br><br>
+        ${estaca0} x 3 = ${c}
+        <br><br>
+        ${estaca0} x 4 = ${d}
+        <br><br>
+        ${estaca0} x 5 = ${e}
+        <br><br>
+        ${estaca0} x 6 = ${f}
+        <br><br>
+        ${estaca0} x 7 = ${g}
+        <br><br>
+        ${estaca0} x 8 = ${h}
+        <br><br>
+         ${estaca0} x 9 = ${i}`
+    }
+
+</script>

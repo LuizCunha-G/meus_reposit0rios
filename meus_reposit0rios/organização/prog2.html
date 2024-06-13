@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleições</title>
+</head>
+<body>
+
+    <h1>Eleição a Presidência</h1>
+    
+    Candidato Kanye West:
+    <input type="text" name="" id="Cand_a" placeholder="Digite todos os votos teve esse candidato">
+    <br><br>
+    Candidato Arnold Schwarzenegger:
+    <input type="text" name="" id="Cand_b" placeholder="Digite todos os votos teve esse candidato">
+    <br><br>
+    Votos em Branco:
+    <input type="text" name="" id="votosBrancos" placeholder="Digite todos os votos em branco">
+    <br><br>
+    Votos Nulos:
+    <input type="text" name="" id="votosNulos" placeholder="Digite todos os votos nulos">
+    <br><br>
+    <button onclick="resu()">Resultados da Eleição</button>
+    <br><br><br>
+    <div id="divEUA">Aqui será exibido os resultados da eleição</div>
+</body>
+</html>
+
+<script>    
+    function resu (){
+        var teamKanye = Number(Cand_a.value);
+        var teamArnold = Number(Cand_b.value);
+        var brancos = Number(votosBrancos.value);
+        var nulo = Number(votosNulos.value)
+        var total = (teamArnold + teamKanye + brancos + nulo)
+        var percK = (teamKanye / total) * 100;
+        var perA = (teamArnold / total) * 100;
+        var inva = brancos + nulo;
+        var invalidos = (inva / total) * 100
+
+        divEUA.innerHTML = `Esse é o total: ${total}<br><br>
+        Candidato Kanye West: ${percK.toFixed(2)}% (${teamKanye} votos)
+        <br><br> Candidato Arnold Schwarzenegger: ${perA.toFixed(2)}% (${teamArnold} votos)
+        <br><br> Inválidos: ${invalidos.toFixed(2)}% (${inva} votos) <br><br>`
+        //var.tofixed dimui as casas decimais //
+        if (percK > perA){
+        divEUA.innerHTML += `Vencedor: Kanye West`
+        }
+        else{
+            divEUA.innerHTML += `Vencedor : Arnold Schwarzenegger`
+        }
+    }
+
+</script>

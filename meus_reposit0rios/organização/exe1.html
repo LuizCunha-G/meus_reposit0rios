@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <h1>Aposentadoria</h1>
+
+    <p>Idade</p>
+    <input id="input_idade" type="text" placeholder="Digite sua idade">
+    <br><br>
+    <button onclick="apoH()">Aposentadoria Homem</button>
+    <br><br>
+    <button onclick="apoM()">Aposentadoria Mulher</button>
+
+    
+</body>
+</html>
+
+<script>
+
+function apoH() {
+    var idade = Number(input_idade.value);
+    var Aposentando = idade >= 70;
+
+    alert("Aposenta")
+
+}
+
+function apoM(){
+    var idade = Number(input_idade.value);
+    var Aposentando = idade >= 60;
+
+    alert("Aposenta")
+}
+
+</script>

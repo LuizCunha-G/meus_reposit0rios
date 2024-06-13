@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        .cor{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Peso Limite</h1>
+
+    <label for="">Homens no elevador:</label>
+    <input type="text" name="" id="men_elevador" placeholder="Digite o número de Homens no elevador">
+    <br><br>
+    <label for="">Mulheres no elevador:</label>
+    <input type="text" name="" id="woman_elevador" placeholder="Digite o número de Mulheres no elevador">
+    <br><br>
+    <button onclick="pesoo()">Analisar Peso</button>
+    <br><br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function pesoo(){
+        var homem = Number(men_elevador.value);
+        var mulher = Number(woman_elevador.value);
+        var pesoh = 80
+        var pesom = 60
+        var pesomacho = homem * pesoh
+        var pesofem = mulher * pesom
+        var soma = pesomacho + pesofem
+
+        
+        if( soma < 800) {
+            
+            resultado.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${soma}kg`
+
+        }
+
+        else {
+          resultado.innerHTML = `<span class="cor">Será necessário que alguém desça para que o elevador se movimente<span>`   
+        }
+
+        } 
+
+
+
+</script>

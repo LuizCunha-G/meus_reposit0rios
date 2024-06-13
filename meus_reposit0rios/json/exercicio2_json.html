@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TIME 1</h1>
+    Informe o time: <br>
+    <input type="text" id="inp_time"> <br><br>
+    Informe quantas vitórias possui: <br>
+    <input type="text" id="inp_vitoria"><br><br>
+    Informe quantos empates possui: <br>
+    <input type="text" id="inp_empate"><br><br>
+    Informe quantas derrotas possui: <br>
+    <input type="text" id="inp_derrota"><br><br>
+
+    <h1>TIME 2</h1>
+    Informe o time: <br>
+    <input type="text" id="inp_time2"> <br><br>
+    Informe quantas vitórias possui: <br>
+    <input type="text" id="inp_vitoria2"><br><br>
+    Informe quantos empates possui: <br>
+    <input type="text" id="inp_empate2"><br><br>
+    Informe quantas derrotas possui: <br>
+    <input type="text" id="inp_derrota2"><br><br>
+
+
+    <button onclick="analise()">Analisar campanha</button><br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    
+    function analise(){
+      
+        var time_a = {
+            nome : inp_time.value,
+            vitoria: Number(inp_vitoria.value),
+            empate: Number(inp_empate.value),
+            derrota: Number(inp_derrota.value)
+            }
+            console.log(time_a)
+            
+        var time_b = {
+            nome : inp_time2.value,
+            vitoria: Number(inp_vitoria2.value),
+            empate: Number(inp_empate2.value),
+            derrota: Number(inp_derrota2.value)
+            }
+            console.log(time_b)
+                
+
+    msg.innerHTML = `O time ${time_a.nome} terminou o campeonato com ${time_a.vitoria * 3 + time_a.empate} pontos<br><br>`
+
+    msg.innerHTML += `O time ${time_b.nome} terminou o campeonato com ${time_b.vitoria * 3 + time_b.empate} pontos<br>`
+
+}
+</script>

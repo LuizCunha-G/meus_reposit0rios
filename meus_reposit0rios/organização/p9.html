@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séries</title>
+</head>
+<body>
+    <h1>SITCOM</h1>
+
+    <label for="">Ultima série SITCOM que você assistiu:</label>
+    <input type="text" name="" id="serie_sit">
+    <br>
+    <label for="">Total de episódios assistidos:</label>
+    <input type="text" name="" id="num_ep">
+    <br><br>
+    <button onclick="seriado()">Verificar nível</button>
+    <br><br><br>
+    <div id="resu"></div>
+</body>
+</html>
+
+<script>
+
+    function seriado(){
+        var serie = (serie_sit.value);
+        var tempo = Number(num_ep.value);
+        var tempporep = 22;
+        var tempototal = tempo * tempporep;
+        var horastotais = tempototal /60;
+
+        if( horastotais < 30){
+            
+            resu.innerHTML = `Vejo que você gosta da série ${serie}`
+        }
+
+        else {
+            resu.innerHTML = `Uau, você realmente gosta dessa série !`
+        }
+    }
+
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Algoritmolandia</h1>
+
+    <label for="">Nome do consumidor:</label>
+    <input type="text" name="" id="nomecons" placeholder="Digite seu nome">
+    <br><br>
+    <label for="">Média de khw:</label>
+    <input type="text" name="" id="khw" placeholder="Digite o valor gasto com khw">
+    <br><br>
+    <button onclick="verificar()">Calcular conta de luz</button>
+    <br><br><br>
+    <div id="res"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var nome = (nomecons.value);
+        var kw = Number(khw.value);
+        var kwMes = kw * 30;
+        var cal = kwMes * 0.85;
+
+
+        if (cal < 1000){
+             var desc10 = cal * 0.10;
+             var valdesc = cal - desc10;
+
+             res.innerHTML = `${nome}, O valor que você deve pagar é ${desc10} com ${valdesc.toFixed(2)} de desconto <br>`;
+        }
+
+        else if (cal >= 2100){
+        var acres = cal * 0.10;
+        var valacres = cal * acres;
+
+        res.innerHTML += ` ${nome}, o valor que você deve pagar é  ${acres} com ${valacres.toFixed(2)} de acrescimo <br>`;
+
+        }
+
+        else {
+            res.innerHTML += `O valor que você deve para pagar é ${cal} sem acrescimo`
+        }
+    }
+
+
+
+</script>

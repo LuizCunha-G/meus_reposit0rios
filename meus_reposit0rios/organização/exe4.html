@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball</title>
+</head>
+<body>
+    <h1>Dragon Ball</h1>
+    <p>Nome do Guerreiro</p>
+    <input type="text" id="input_nome" placeholder="Digite o nome do Gurreiro">
+    <br>
+    <p>Ki do Guerreiro</p>
+    <input type="text" name="" id="input_ki" placeholder="Digite seu KI">
+    <br><br>
+    <button onclick="ki()">Ver ki em cada forma</button>
+</body>
+</html>
+
+<script>
+    function  ki(){
+        var kinormal = Number(input_ki.value);
+        var supersayajin = kinormal * 50;
+        var supersayajin2 = kinormal * 100;
+
+        alert('o Guerreiro '+ input_nome.value + ' em seu modo Super Sayajini fica com o ki em: '+ supersayajin + ' e em seu modo Super Sayajin 2 fica com: '+ supersayajin2 )
+
+
+    }
+    
+
+
+</script>

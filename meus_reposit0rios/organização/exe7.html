@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Digital</title>
+</head>
+<body>
+    <h1>Banco Digital</h1>
+    <button onclick="receber()">Receber 100</button>
+    <button onclick="pagar()">Pagar 50</button>
+</body>
+</html>
+
+<script>
+    var valor = 0
+
+    function receber(){
+        valor = valor + 100
+        alert('Transferência de R$100 recebida! Saldo atual: R$' + valor)
+    }
+
+    function pagar(){
+        valor = valor - 50 
+        alert('Pagamento de R$50 efetuado! Saldo atual: R$' + valor)
+    }
+
+
+</script>

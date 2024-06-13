@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Seu salario mensal: </label>
+    <input type="text" name="" id="sal_mensal"  placeholder="Salário mensal">
+    <br><br>
+    <label for="">O Valor adicional que você recebeu: </label>
+    <input type="text" name="" id="adicional_val" placeholder="Adicional mensal">
+    <br><br>
+    <label for="">O Bônus que foi efeutado: </label>
+    <input type="text" name="" id="bonus_val" placeholder="Bônus do salario">
+    <br><br>
+    <button onclick="renda()">Analisar Minha Renda</button>
+    <br><br><br>
+    <div id="resultado"></div>
+    <br><br>
+    <div id="poupanca"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function renda(){
+        var salario = Number(sal_mensal.value);
+        var adicional = Number(adicional_val.value);
+        var bonus = Number(bonus_val.value);
+        var bruto = salario + adicional + bonus;
+        var imposto = bruto * 0.125;
+        var ir = bruto - imposto;
+        var inss = ir * 0.1;
+        var inss1 = bruto * 0.1;
+        var fgts = ir * 0.08;
+        var fgts1 = bruto * 0.08
+        var liquido = bruto - imposto - inss - fgts;
+        var liquido1 = bruto - ir - inss1 - fgts1;
+
+
+        if(bruto >= 1000){
+   
+            resultado.innerHTML = `
+            <b>ANALISANDO SUA RENDA</b>
+            <br><br>
+            Com o salário de R$ ${salario}, com adicional de R$ ${adicional} e bônus de R$ ${bonus}, você tem: 
+            <br><br>
+                Bruto: R$ ${bruto}  
+            <br><br>
+                IR: R$  ${imposto}  
+            <br><br>
+                INSS: R$ ${inss} 
+            <br><br>
+                FGTS: R$ ${fgts}
+            <br><br>
+                Líquido: R$ ${liquido}
+
+             `
+        }
+
+        else{
+
+            resultado.innerHTML = `
+            <b>ANALISANDO SUA RENDA</b>
+            <br><br>
+            Com o salário de R$ ${salario}, com adicional de R$ ${adicional} e bônus de R$ ${bonus}, você tem: 
+            <br><br>
+                Bruto: R$ ${bruto}  
+            <br><br>
+                IR: R$  ${ir - ir}  
+            <br><br>
+                INSS: R$ ${inss1} 
+            <br><br>
+                FGTS: R$ ${fgts1}
+            <br><br>
+                Líquido: R$ ${liquido1}
+
+             `
+        }
+
+         if(liquido >= 2500){
+            var poupar = liquido * 0.15;
+            var poupar_ano = poupar * 12;
+
+            poupanca.innerHTML = `Com a renda de R$ ${liquido}, é recomendado poupar R$ ${poupar}, para que em um ano tenha poupado R$ ${poupar_ano}`
+         }
+
+         else{
+
+            poupanca.innerHTML = `Com a renda de R$ ${liquido}, é recomendado obter renda extra para realizar uma poupança.`
+
+         }
+
+
+
+    }
+
+</script>

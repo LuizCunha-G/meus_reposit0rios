@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fora de Série</title>
+</head>
+<body>
+    
+    <h1>Notas</h1>
+
+    <p>Média de 3 Notas</p>
+    <label for="">1º Nota</label>
+    <input type="text" name="" id="notinha_1" placeholder="Digite sua nota">
+    <br>
+    <label for="">2º Nota</label>
+    <input type="text" name="" id="notinha_2" placeholder="Digite sua nota">
+    <br>
+    <label for="">3º Nota</label>
+    <input type="text" name="" id="notinha_3" placeholder="Digite sua nota">
+    <br><br>
+    <button onclick="media()">analisar o desempenho</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function media(){
+        var notaum = Number(notinha_1.value);
+        var notadois = Number(notinha_2.value);
+        var notatres  = Number(notinha_3.value);
+        var somando = notaum +  notadois + notatres;
+        var mediando = ( somando / 3)
+
+        if (mediando > 9.4){
+            resultado.innerHTML = `Sua Média foi de ${mediando} <br>`
+            resultado.innerHTML += `Parabéns, você é fora de série`
+        }
+
+        else {
+            resultado.innerHTML = `Sua Média foi de ${mediando}` 
+        }
+    }
+
+</script>
